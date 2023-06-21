@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            color: rgb(68, 6, 6);
+            background-color: rgb(25, 192, 214);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1 {
+            background-color: rgb(236, 159, 16);
+            color: rgb(221, 198, 67);
+        }
+        button {
+            background-color: rgb(88, 129, 26);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-style: groove;
+        }
+        input {
+            border: rgb(219, 233, 91);
+            border-style: double;
+            padding: 5px;
+            background: rgb(11, 187, 187);
+            color: rgb(136, 10, 10);
+        }
+        button:hover {
+            background: rgb(41, 228, 24);
+        }
+        button:active {
+            background: rgb(41, 228, 24);
+        }
+        .Fname:hover {
+            background: rgb(41, 228, 24);
+            padding-button: 10px;
+        }
+        .Lname:hover {
+            background: rgb(41, 228, 24);
+            padding-button: 10px;
+        }
+        input:hover {
+            background: rgb(41, 228, 24);
+        }
+        .container {
+            background-color: rgb(231, 147, 87);
+            border-radius: 25px;
+            margin-top: 50px;
+            margin-bottom: 80px;
+            margin-left: 300px;
+            margin-right: 300px;
+            border-style:groove;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+        .container:hover{
+            background-color: rgb(160, 122, 108);
+        }
+        p:hover {
+            background-color: rgb(209, 108, 108);
+        }
+    </style>
+</head>
+
+<body>
+   <div class="container">
+       <forms class="data">
+           <h1><center>Personal Info</center></h1>
+           <table>
+               <center>
+                          <p>First Name:</p><input id="myFirst" onkeydown="count()"><br><br>
+                           <p>Last Name:</p><input id="myLast" onkeydown="count()"><br><br>
+                          <p>Birth Year:</p><input id="myBirth"><br><br>
+               
+                           <button onclick="sub()">SUBMIT</button><br><br>
+                           First Name is pressed <span id="count">0</span> Times <br>
+                           Your age is <span id="myBirth1">0</span>
+               </center>
+           </table>
+       </forms>
+   </div>
+    <script>
+
+        function count() {
+            var count = document.getElementById("count").innerHTML;
+
+            document.getElementById("count").innerHTML = Number(count) + 1;
+        }
+        function sub() {
+            alert("Your Information is Saved")
+        }
+        var myBirth = document.getElementById("myBirth");
+        var myBirth1 = document.getElementById("myBirth1");
+        var y = 2023
+
+        myBirth.addEventListener("keyup", function () {
+            var val = myBirth.value;
+            myBirth1.innerText = (y - val);
+        });
+    </script>
+</body>
+
+</html>
